@@ -14,9 +14,9 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" x:Name="kartyakhelye" MinHeight="100">
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Új szó" Margin="10"></Button>
-                <Button Content="Ellenőrzés" Margin="10"></Button>
+            <StackPanel x:Name="gombok" Orientation="Horizontal">
+                <Button Content="Új szó" Margin="10" Width="100" Click="UjSzo"/>
+                <Button Content="Ellenőrzés" Margin="10" Width="100" Click="Ellenorzes"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

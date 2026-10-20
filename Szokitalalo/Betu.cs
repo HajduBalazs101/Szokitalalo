@@ -10,9 +10,10 @@ using System.Windows.Media;
 
 namespace Szokitalalo
 {
-    class Betu :Button
+    class Betu : Button
     {
         private char megfejtes;
+        private string megfejtesSzo;
         List<char> Betuk = new List<char>
         {
             '_', 'A', 'Á', 'B', 'C', 'D', 'E', 'É', 'F', 'G', 'H', 'I', 'Í', 'J', 'K',
@@ -20,9 +21,10 @@ namespace Szokitalalo
             'Ü', 'Ű', 'V', 'W', 'X', 'Y', 'Z'
         };
         int index = 0;
-        public Betu(char megfejtes)
+        public Betu(char megfejtes, string megfejtesSzo)
         {
-            this.megfejtes = megfejtes;
+            this.megfejtes = char.ToUpper(megfejtes);
+            this.megfejtesSzo = megfejtesSzo.ToUpper();
             this.Content = Betuk[0];
             this.Background = Brushes.LightGray;
             this.Margin = new System.Windows.Thickness(20);
@@ -31,9 +33,9 @@ namespace Szokitalalo
             this.FontSize = 40;
         }
 
-        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
         {
-        
+
             if (index >= Betuk.Count - 1)
             {
                 index = 0;
@@ -41,9 +43,10 @@ namespace Szokitalalo
             else
                 index++;
             this.Content = Betuk[index];
-            base.OnMouseLeftButtonDown(e);
+            Szinez();
+            base.OnMouseLeftButtonUp(e);
         }
-        protected override void OnMouseRightButtonDown(MouseButtonEventArgs e)
+        protected override void OnMouseRightButtonUp(MouseButtonEventArgs e)
         {
             if (index <= 0)
             {
@@ -52,7 +55,32 @@ namespace Szokitalalo
             else
                 index--;
             this.Content = Betuk[index];
-            base.OnMouseRightButtonDown(e);
+            Szinez();
+            base.OnMouseRightButtonUp(e);
+        }
+
+        private void Szinez()
+        {
+            if (megfejtes == Betuk[index])
+            {
+                this.Background = Brushes.LightGreen;
+            }
+            else if(megfejtesSzo.Contains(Betuk[index]))
+            {
+                this.Background = Brushes.Yellow;
+            }
+            else
+            {
+                this.Background = Brushes.LightGray;
+            }
+        }
+        public bool kitalalt()
+        {
+            if (megfejtes == Betuk[index])
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
