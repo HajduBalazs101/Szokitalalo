@@ -11,14 +11,18 @@ using System.Windows.Shapes;
 
 namespace Szokitalalo
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            List<string> szavak = new List<string> { "alma", "körte", "barack" };
+            Random r = new Random();
+
+            foreach(char s in szavak[r.Next(0, szavak.Count)])
+            {
+
+            }
         }
     }
 }

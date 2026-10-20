@@ -13,7 +13,7 @@
                 <Label Content="A betűk előre léptetéséhez használd a bal gombot, a hátra léptetéshez a jobb gombot, a betű ki van találva amikor zöld színű"></Label>
             </StackPanel>
             <TextBlock x:Name="kartyakhelye" MinHeight="100">
-                <Button Content="Á" Margin="50" Height="60" Width="60" FontSize="40" Background="LawnGreen"></Button>
+                <Button Content="Á" Margin="20" Height="60" Width="60" FontSize="40" Background="LawnGreen"></Button>
             </TextBlock>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Új szó" Margin="10"></Button>
