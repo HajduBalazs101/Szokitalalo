@@ -19,9 +19,9 @@ namespace Szokitalalo
             List<string> szavak = new List<string> { "alma", "körte", "barack" };
             Random r = new Random();
 
-            foreach(char s in szavak[r.Next(0, szavak.Count)])
+            foreach(char s in szavak[r.Next(szavak.Count)])
             {
-
+                kartyakhelye.Children.Add(new Betu(s));
             }
         }
     }
