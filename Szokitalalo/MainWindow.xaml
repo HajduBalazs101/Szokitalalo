@@ -1,0 +1,24 @@
+﻿<Window x:Class="Szokitalalo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szokitalalo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
+                <Label Content="Szókilaláló" FontSize="48" FontFamily="Candara"></Label>
+                <Label Content="A betűk előre léptetéséhez használd a bal gombot, a hátra léptetéshez a jobb gombot, a betű ki van találva amikor zöld színű"></Label>
+            </StackPanel>
+            <TextBlock x:Name="kartyakhelye" MinHeight="100">
+                <Button Content="Á" Margin="50" Height="60" Width="60" FontSize="40" Background="LawnGreen"></Button>
+            </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Új szó" Margin="10"></Button>
+                <Button Content="Ellenőrzés" Margin="10"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
